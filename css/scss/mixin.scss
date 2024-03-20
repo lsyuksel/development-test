@@ -1,0 +1,140 @@
+$xxs : 374;
+$xs : 575;
+$sm : 767;
+$md : 991;
+$lg : 1199;
+$xlg : 1320;
+$gutter: 16px;
+
+@mixin max($breakpoint) {
+	@media (max-width: $breakpoint + px) {
+		@content;
+	}
+}
+
+@mixin min($breakpoint) {
+	@media (min-width: ($breakpoint + 1) + px) {
+		@content;
+	}
+}
+
+.container {
+	padding-right: $gutter;
+	padding-left: $gutter;
+	@include min($lg) {
+		max-width: 1110px + $gutter*2;
+	}
+}
+
+.row {
+	margin-right: -$gutter !important;
+	margin-left: -$gutter !important;
+	@include max($xs) {
+		margin-right: -6px !important;
+		margin-left: -6px !important;
+	}
+}
+
+.col-auto {
+	padding-left: $gutter !important;
+	padding-right: $gutter !important;
+	@include max($xs) {
+		padding-left: 6px !important;
+		padding-right: 6px !important;
+	}
+}
+
+@mixin imgcenter {
+	img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		display: block;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+@mixin fit {
+	img {
+		position:absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+@mixin center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Text Type */
+@mixin heading-type-1 {
+    font-size: 61px;
+	font-family: $font-itc;
+	font-weight: bold;
+}
+@mixin heading-type-2 {
+    font-size: 48px;
+	font-family: $font-itc;
+	font-weight: bold;
+}
+@mixin heading-type-3 {
+    font-size: 39px;
+	font-family: $font-itc;
+	font-weight: bold;
+}
+@mixin heading-type-4 {
+    font-size: 31px;
+	font-family: $font-itc;
+	font-weight: bold;
+}
+@mixin heading-type-5 {
+    font-size: 258px;
+	font-family: $font-itc;
+	font-weight: bold;
+}
+@mixin heading-type-6 {
+    font-size: 20px;
+    font-weight: 400;
+	font-family: $font-avenir;
+}
+
+/* Text Type */
+@mixin body-bold-text {
+    font-size: 16px;
+    font-weight: 500;
+	font-family: $font-avenir;
+}
+@mixin body-bold-text-mobile {
+    font-size: 14px;
+    font-weight: 500;
+	font-family: $font-avenir;
+}
+@mixin body-text {
+    font-size: 16px;
+    font-weight: 400;
+	font-family: $font-avenir;
+}
+@mixin body-text-mobile {
+    font-size: 14px;
+    font-weight: 400;
+	font-family: $font-avenir;
+}
+@mixin label-text {
+    font-size: 16px;
+    font-weight: 400;
+	font-family: $font-avenir;
+}
+@mixin caption-text {
+    font-size: 14px;
+    font-weight: 400;
+	font-family: $font-avenir;
+}

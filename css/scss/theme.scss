@@ -1,0 +1,351 @@
+$font-avenir: 'Avenir';
+$font-itc: 'ITC Avant Garde Gothic Pro';
+$text-color: #000000;
+$primary-color: #000000;
+$body-color: #666666;
+$light-color: #E6E6E6;
+$white-color: #FFFFFF;
+$body-color: #666666;
+$transition-base: all .45s ease-in-out;
+$radius-base: 5px;
+
+@import 'mixin';
+
+* {
+    outline: none;
+    -moz-box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+    color: inherit;
+    text-decoration: none !important;
+    font-size: inherit;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html,
+body,
+form {
+    font-family: $font-avenir;
+    line-height: 1;
+    font-size: 14px;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.revealOnScroll {
+    opacity: 0;
+}
+
+.animated {
+    opacity: 1;
+}
+
+.entry-banner-image {
+    width: 100%;
+    height: 100vh;
+    min-height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 0;
+    }
+    @include max($md) {
+        height: auto;
+        min-height: initial;
+    }
+}
+
+.entry-content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    .wrapper {
+        width: 100%;
+        max-height: 100%;
+        padding: 60px 0;
+    }
+    .top-content {
+        padding: 0 120px;
+        margin-bottom: 68px;
+        .entry-title {
+            color: $primary-color;
+            font-family: $font-itc;
+            font-weight: bold;
+            font-size: 31px;
+            line-height: 130%;
+            margin: 0 0 12px;
+        }
+        .entry-text {
+            @include body-text;
+            color: $body-color;
+            margin: 0 0 32px;
+        }
+        .entry-button {
+            > a {
+                font-size: 13px;
+                font-weight: 900;
+                color: $primary-color;
+                transition: $transition-base;
+                padding: 0 0 5px;
+                border-bottom: 1px solid $primary-color;
+                &:hover {
+                    border-color: #c72020;
+                    color: #c72020;
+                }
+            }
+        }
+    }
+    .bottom-content {
+        padding-left: 120px;
+    }
+    @include max($xlg) {
+        .top-content {
+            padding: 0 60px;
+        }
+        .bottom-content {
+            padding-left: 60px;
+        }
+    }
+    @include max($lg) {
+        .top-content {
+            margin-bottom: 40px;
+            .entry-title {
+                font-size: 28px;
+            }
+            .entry-text {
+                font-size: 14px;
+                line-height: 190%;
+                margin: 0 0 20px;
+            }
+        }
+    }
+    @include max($md) {
+        height: auto;
+        .wrapper {
+            padding: 0 0 64px;
+            margin-top: -250px;
+        }
+        .top-content {
+            margin-bottom: 0;
+            padding: 28px 60px 80px;
+            position: relative;
+            margin-bottom: -30px;
+            &:before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: 0;
+                background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 79%);
+                opacity: 0.5;
+            }
+            .entry-title {
+                color: #fff;
+            }
+            .entry-text {
+                display: none;
+            }
+            .entry-button > a {
+                color: #fff;
+                border-color: #fff;
+            }
+            > * {
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+    @include max($xs) {
+        .wrapper {
+            margin-top: -232px;
+        }
+       .top-content {
+            padding-left: 24px;
+            padding-right: 24px;
+            .entry-title {
+                font-size: 20px;
+                line-height: 150%;
+            }
+        }
+        .bottom-content {
+            padding-left: 24px;
+        }
+    }
+}
+
+.product-list-container {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    .product-item {
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            @include fit;
+            padding-top: 135%;
+            display: block;
+            img {
+                transition: all 300ms ease;
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+            }
+            @include min($md) {
+                &:hover {
+                    img {
+                        opacity: 0;
+                        &:nth-child(2) {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .product-content {
+            padding: 12px 0 0;
+            .product-title {
+                margin-bottom: 4px;
+                a {
+                    color: $primary-color;
+                    @include body-text-mobile;
+                }
+            }
+            .product-bottom {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                .product-price {
+                    flex: 1 0 0;
+                    @include body-bold-text-mobile;
+                    color: $primary-color;
+                }
+                .product-variant {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    > div {
+                        > a {
+                            position: relative;
+                            overflow: hidden;
+                            border-radius: 50%;
+                            width: 16px;
+                            height: 16px;
+                            display: block;
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                border: 1px solid $primary-color;
+                                width: 100%;
+                                height: 100%;
+                                display: block;
+                                opacity: 0;
+                                z-index: 1;
+                                border-radius: 50%;
+                            }
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                        }
+                        &.active {
+                            > a {
+                                padding: 3px;
+                                &:before {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+	.slick-arrow {
+		position: absolute;
+        opacity: 1;
+        top: 50%;
+        z-index: 2;
+        transform: translateY(-50%);
+        margin-top: -29px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border: 1px solid rgb(0 0 0 / 10%);
+        border-radius: 0;
+        background: transparent;
+        outline: none;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-base;
+        > svg path {
+            transition: $transition-base;
+        }
+        &.slick-prev {
+            left: 48px;
+        }
+        &.slick-next {
+            right: 48px;
+        }
+        &:hover {
+            background: $primary-color;
+            border-color: $primary-color;
+            > svg path {
+                fill: $white-color;
+            }
+        }
+        &.slick-disabled {
+            opacity: 0;
+        }
+	}
+    @include max($xs) {
+        .product-item {
+            .product-content {
+                .product-title a {
+                    line-height: 22px;
+                    height: 44px;
+                    display: block;
+                    overflow: hidden;
+                }
+                .product-bottom {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}

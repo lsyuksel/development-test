@@ -1,0 +1,34 @@
+.container {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1142px;
+  }
+}
+
+.row {
+  margin-right: -16px !important;
+  margin-left: -16px !important;
+}
+@media (max-width: 575px) {
+  .row {
+    margin-right: -6px !important;
+    margin-left: -6px !important;
+  }
+}
+
+.col-auto {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+@media (max-width: 575px) {
+  .col-auto {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+}
+
+/* Text Type */
+/* Text Type *//*# sourceMappingURL=mixin.css.map */

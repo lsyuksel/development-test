@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'ITC Avant Garde Gothic Pro';
+    src: url('ITCAvantGardeGothicPro-Demi.eot');
+    src: url('ITCAvantGardeGothicPro-Demi.eot?#iefix') format('embedded-opentype'),
+        url('ITCAvantGardeGothicPro-Demi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Gothic Pro';
+    src: url('ITCAvantGardeGothicPro-Bold.eot');
+    src: url('ITCAvantGardeGothicPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ITCAvantGardeGothicPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Gothic Pro';
+    src: url('ITCAvantGardeGothicPro-Md.eot');
+    src: url('ITCAvantGardeGothicPro-Md.eot?#iefix') format('embedded-opentype'),
+        url('ITCAvantGardeGothicPro-Md.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Gothic Pro';
+    src: url('ITCAvantGardeGothicPro-XLt.eot');
+    src: url('ITCAvantGardeGothicPro-XLt.eot?#iefix') format('embedded-opentype'),
+        url('ITCAvantGardeGothicPro-XLt.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
